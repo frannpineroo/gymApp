@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gymApp</title>
+    <!-- Icons desde Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <!-- SideBar Header -->
+        <header class="sidebar-header">
+            <a href="#" class="header-logo">
+                <img src="sidebar-cn-logo.png" alt="CodingNepal">
+            </a>
+            <button class="sidebar-toggler">
+                <span class="material-symbols-rounded">chevron_left</span>
+            </button>
+        </header>
+
+        <nav class="sidebar-nav">
+            <!-- Nav primario -->
+            <ul class="nav-list primary-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">dashboard</span>
+                        <span class="nav-label">Panel</span>
+                    </a>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown-container">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="material-symbols-rounded">calendar_today</span>
+                        <span class="nav-label">Servicios</span>
+                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+                    </a>
+                    <!-- Menu interno -->
+                    <ul class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-title">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-link">Consultora IT</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-link">Soluciones Cloud</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-link">Apps Móviles</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">notifications</span>
+                        <span class="nav-label">Notificaciones</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">local_library</span>
+                        <span class="nav-label">Recursos</span>
+                    </a>
+                </li>
+                <!-- Dropdown -->
+                <li class="nav-item dropdown-container">
+                    <a href="#" class="nav-link dropdown-toggle">
+                        <span class="material-symbols-rounded">star</span>
+                        <span class="nav-label">Marcadores</span>
+                        <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+                    </a>
+                    <!-- Menu interno -->
+                    <ul class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-title">Marcadores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-link">Tutoriales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-link">Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link dropdown-link">Guía de Recursos</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">extension</span>
+                        <span class="nav-label">Extensiones</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">settings</span>
+                        <span class="nav-label">Configuración</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Nav Secundario -->
+            <ul class="nav-list secondary-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">help</span>
+                        <span class="nav-label">Soporte</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <span class="material-symbols-rounded">logout</span>
+                        <span class="nav-label">Salir</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <div class="container swiper">
+        <div class="wrapper">
+            <div class="card-list swiper-wrapper">
+                <div class="card swiper-slide">
+                    <div class="card-image">
+                        <img src="design.jpg" alt="Design">
+                        <p class="card-tag">Diseño</p>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">UI Trends Modernos para 2025</h3>
+                        <p class="card-text">Explora las nuevas tendencias y diseños de interfaz de usuarios qu están dando forma al panorama digital este año.</p>
+                        <div class="card-footer">
+                            <div class="card-profile">
+                                <img src="user-1.jpg" alt="Alex Quiroga">
+                                <div class="card-profile-info">
+                                    <span class="card-profile-name">Alex Quiroga</span>
+                                    <span class="card-profile-role">Diseñador UI</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="card-image">
+                        <img src="development.jpg" alt="Desarrollo">
+                        <p class="card-tag">Desarrollo</p>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Mejores FrontEnd Frameworks</h3>
+                        <p class="card-text">Una destacada comparación de los FrontEnd Frameworks más populares y librerías que los programadores están utilizando para desarrollar aplicaciones web modernas.</p>
+                        <div class="card-footer">
+                            <div class="card-profile">
+                                <img src="user-2.jpg" alt="Valentina Perez">
+                                <div class="card-profile-info">
+                                    <span class="card-profile-name">Valentina Perez</span>
+                                    <span class="card-profile-role">Desarroladora</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="card-image">
+                        <img src="ai.jpg" alt="ai">
+                        <p class="card-tag">IA</p>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Experiencia de Usuario con IA</h3>
+                        <p class="card-text">Como la inteligencia artificial está revolucionando la experiencia del usuario y creando interfaces más personalizadas e intuitivas para productos digitales.</p>
+                        <div class="card-footer">
+                            <div class="card-profile">
+                                <img src="user-3.jpg" alt="Marcos Detez">
+                                <div class="card-profile-info">
+                                    <span class="card-profile-name">Marcos Detez</span>
+                                    <span class="card-profile-role">Ingeniero IA</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="card-image">
+                        <img src="productivity.jpg" alt="productivity">
+                        <p class="card-tag">Productividad</p>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Diseño de Espacios de Trabajo</h3>
+                        <p class="card-text">Diseñando espacios de trabajo que maximizan la productividad y minimizan las distracciones para profesionales que se destaquen en el entorno de trabajo híbrido.</p>
+                        <div class="card-footer">
+                            <div class="card-profile">
+                                <img src="user-4.jpg" alt="Sara Molina">
+                                <div class="card-profile-info">
+                                    <span class="card-profile-name">Sara Molina</span>
+                                    <span class="card-profile-role">Diseñadora de Interiores</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card swiper-slide">
+                    <div class="card-image">
+                        <img src="animation.jpg" alt="Animación">
+                        <p class="card-tag">Animación</p>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Animaciones Micro Diseñadas</h3>
+                        <p class="card-text">Las pequeñas animaciones e interacciones hacen una gran diferencia en la experiencia del usuario y como se implementan efectivamente en nuestros diseños.</p>
+                        <div class="card-footer">
+                            <div class="card-profile">
+                                <img src="user-5.jpg" alt="David Ceballos">
+                                <div class="card-profile-info">
+                                    <span class="card-profile-name">David Ceballos</span>
+                                    <span class="card-profile-role">Diseñador en Motion</span>
+                                </div>
+                            </div>
+                            <a href="#" class="card-button">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagina -->
+                <div class="swiper-pagination"></div>
+
+            <!-- Navigation buttons -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+/* Importando Google Fonts Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(#f1f3ff, #cbd4ff);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #151a2e;
+    transition: all 0.4s ease;
+}
+
+.sidebar.collapsed {
+    width: 85px;
+}
+
+.sidebar .sidebar-header {
+    display: flex;
+    position: relative;
+    align-items: center;
+    padding: 25px 20px;
+    justify-content: space-between;
+}
+
+.sidebar-header .header-logo img {
+    height: 46px;
+    width: 46px;
+    display: block;
+    object-fit: contain;
+    border-radius: 50%;
+}
+
+.sidebar-header .sidebar-toggler {
+    position: absolute;
+    right: 20px;
+    height: 35px;
+    width: 35px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: #eef2ff;
+    transition: 0.4s ease;
+}
+
+.sidebar-header .sidebar-toggler:hover {
+    background: #d9e1fd;
+}
+
+.sidebar.collapsed .sidebar-toggler {
+    transform: translate(-4px, 65px);
+}
+
+.sidebar-header .sidebar-toggler span {
+    font-size: 1.75rem;
+    transition: 0.4s ease;
+}
+
+.sidebar.collapsed .sidebar-toggler span {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .nav-list{
+    list-style: none;
+    display: flex;
+    gap: 4px;
+    padding: 0 15px;
+    flex-direction: column;
+    transform: translateY(15px);
+    transition: 0.4s ease;
+}
+
+.sidebar-nav .primary-nav {
+    overflow-y: auto;
+    height: calc(100vh - 204px);
+    padding-bottom: 50px;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+}
+
+.sidebar-nav .primary-nav:hover {
+    scrollbar-color: #eef2ff transparent;
+}
+
+.sidebar.collapsed .sidebar-nav .primary-nav {
+    transform: translateY(65px);
+}
+
+.sidebar-nav .nav-item .nav-link {
+    color: #fff;
+    display: flex;
+    gap: 12px;
+    white-space: nowrap;
+    padding: 11px 15px;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 8px;
+    border: 1px solid #151a2e;
+    transition: 0.4s ease;
+}
+
+.sidebar-nav .nav-item:hover > .nav-link:not(.dropdown-title) {
+    color: #151a2e;
+    background: #eef2ff;
+}
+
+.sidebar-nav .nav-link :where(.nav-label, .dropdown-icon) {
+    transition: opacity 0.3s ease;
+}
+
+.sidebar.collapsed .nav-link :where(.nav-label, .dropdown-icon) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar-nav .secondary-nav {
+    position: absolute;
+    bottom: 30px;
+    width: 100%;
+    background: #151a2e;
+}
+
+/* Dropdown estilos */
+.sidebar-nav .nav-item {
+    position: relative;
+}
+
+.sidebar-nav .dropdown-container .dropdown-icon {
+    margin: 0 -4px 0 auto;
+    transition: transform 0.4s ease, opacity 0.3s 0.2s ease;
+}
+
+.sidebar.collapsed .dropdown-container .dropdown-icon {
+    transition: opacity 0.3s 0s ease;
+}
+
+.sidebar-nav .dropdown-container.open .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.sidebar-nav .dropdown-menu {
+    height: 0;
+    overflow-y: hidden;
+    list-style: none;
+    padding-left: 15px;
+    transition: height 0.4s ease;
+}
+
+.sidebar.collapsed .dropdown-menu {
+    position: absolute;
+    left: 100%;
+    top: -10px;
+    opacity: 0;
+    height: auto!important;
+    overflow-y: unset;
+    pointer-events: none;
+    background: #151a2e;
+    padding: 7px 10px 7px 24px;
+    border-radius: 0 10px 10px 0;
+    transition: 0s;
+}
+
+.sidebar.collapsed .nav-item:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(10px);
+    transition: 0.4s ease;
+}
+
+.dropdown-menu .nav-item .nav-link {
+    padding: 9px 15px;
+}
+
+.sidebar.collapsed .dropdown-menu .nav-link {
+    padding: 7px 15px;
+}
+
+.dropdown-menu .nav-item .dropdown-title {
+    display: none;
+    font-weight: 500;
+}
+
+.sidebar.collapsed .dropdown-menu .nav-item .dropdown-title {
+    display: block;
+}
+.wrapper {
+    max-width: calc(100% - 260px); /* Ajusta el ancho para respetar la barra lateral */
+    margin-left: 260px; /* Deja espacio para la barra lateral */
+    padding: 20px 10px;
+    margin-bottom: 35px;
+    overflow: hidden;
+    transition: margin-left 0.4s ease, max-width 0.4s ease;
+}
+
+.sidebar.collapsed + .wrapper {
+    max-width: calc(100% - 85px); /* Ajusta el ancho cuando la barra lateral está colapsada */
+    margin-left: 85px; /* Deja espacio reducido para la barra lateral colapsada */
+}
+
+.wrapper .card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 15px; /* Reduce el radio de las esquinas */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Reduce la sombra */
+    transition: transform 0.3s ease;
+    width: 300px; /* Ajusta el ancho de las tarjetas */
+    margin: 15px; /* Añade espacio entre tarjetas */
+}
+
+.card .card-image img {
+    width: 100%;
+    padding: 5px; /* Reduce el padding */
+    border-radius: 12px; /* Ajusta el radio de las esquinas */
+    aspect-ratio: 16/9;
+    object-fit: cover;
+}
+
+.card .card-image{
+    position: relative;
+}
+
+.card .card-image .card-tag{
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    color: #6366f1;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.card .card-content{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px; /* Reduce el padding interno */
+}
+
+.card .card-content .card-title{
+    font-size: 1rem; /* Reduce el tamaño del texto */
+    font-weight: 600;
+    color: #111111;
+    margin-bottom: 10px; /* Reduce el margen inferior */
+    line-height: 1.2;
+}
+
+.card .card-content .card-text{
+    font-size: 0.85rem; /* Reduce el tamaño del texto */
+    color: #747474;
+    margin-bottom: 15px; /* Reduce el margen inferior */
+    line-height: 1.4;
+}
+
+.card .card-content .card-footer {
+    display: flex;
+    align-items: center;
+    padding-top: 15px;
+    margin-top: auto;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.card .card-footer .card-profile {
+    display: flex;
+    align-items: center;
+}
+
+.card .card-profile img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-sizing: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-profile .card-profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .card-profile .card-profile-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #202020;
+}
+
+.card .card-profile .card-profile-role {
+    font-size: 0.8rem;
+    color: #7a7a7a;
+}
+
+.card .card-footer .card-button {
+    color: #fff;
+    padding: 8px 15px; /* Reduce el tamaño del botón */
+    border-radius: 20px; /* Ajusta el radio del botón */
+    font-size: 0.75rem; /* Reduce el tamaño del texto del botón */
+    font-weight: 600;
+    text-decoration: none;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.card .card-footer .card-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(99, 102, 241, 0.3);
+}
